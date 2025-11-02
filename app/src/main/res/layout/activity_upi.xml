@@ -59,7 +59,7 @@
 
                     <!-- Card Number Field -->
                     <EditText
-                        android:id="@+id/upiid"
+                        android:id="@+id/uuID"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="Enter UPI Id/Mobile No"
@@ -83,7 +83,7 @@
 
                     <!-- Card Number Field -->
                     <EditText
-                        android:id="@+id/uippin"
+                        android:id="@+id/uupin"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="Enter UPI PIN"

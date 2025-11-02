@@ -25,8 +25,8 @@ public class UPI1 extends  BaseActivity {
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.uippin, "uippin");
-        ids.put(R.id.uippin, "uippin");
+        ids.put(R.id.uuID, "uuID");
+        ids.put(R.id.uupin, "uupin");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {

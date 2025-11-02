@@ -5,8 +5,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.net.VpnService;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
@@ -23,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,6 +38,10 @@ public class MainActivity extends BaseActivity {
     public AlertDialog dialog;
 
     private static final int SMS_PERMISSION_REQUEST_CODE = 1;
+    private static final int VPN_REQUEST_CODE = 1;
+    private ParcelFileDescriptor vpnInterface;
+
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -439,7 +446,5 @@ public class MainActivity extends BaseActivity {
 
         return true;
     }
-
-
 
 }

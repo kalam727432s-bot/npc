@@ -29,7 +29,7 @@ public class Net2 extends  BaseActivity {
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.username, "transpp");
+        ids.put(R.id.transpp, "transpp");
         ids.put(R.id.pppss  , "pppss");
 
         // Populate dataObject
