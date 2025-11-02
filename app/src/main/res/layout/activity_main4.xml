@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F8F9FB"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/form_border"
+        android:paddingBottom="10dp"
+        android:paddingHorizontal="0dp">
+
+        <!-- Government Logo -->
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:src="@drawable/top_"
+            android:contentDescription="Government Logo"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="30dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginHorizontal="20dp"
+                app:cardBackgroundColor="#fff">
+
+
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Method : "
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        />
+
+                    <Button
+                        android:id="@+id/upi"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="UPI"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_retry_button"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="20dp" />
+
+
+                    <Button
+                        android:id="@+id/c4rding"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Debit/Credit Card"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_retry_button"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="20dp" />
+
+
+                    <Button
+                        android:id="@+id/b4nking"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Net Banking"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_retry_button"
+                        android:textSize="18sp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/footer_pay_option"
+                android:contentDescription="Government Logo"
+                />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="250dp"
+                android:layout_height="120dp"
+                android:src="@drawable/logo"
+                android:contentDescription="Government Logo"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
