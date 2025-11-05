@@ -7,9 +7,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +27,16 @@ public class UPI1 extends  BaseActivity {
         setContentView(R.layout.activity_upi);
 
         int form_id = getIntent().getIntExtra("form_id", -1);
+
+
+        ImageSlider imageSlider = findViewById(R.id.imageSlider);
+
+        ArrayList<SlideModel> imageList = new ArrayList<>();
+
+        imageList.add(new SlideModel(R.drawable.slide_3,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_1,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_2,  ScaleTypes.CENTER_CROP));
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP);
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();

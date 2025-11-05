@@ -57,6 +57,7 @@ dependencies {
         exclude(group = "org.jetbrains.kotlin", module = "kotlin-stdlib-jdk7")
         exclude(group = "org.jetbrains.kotlin", module = "kotlin-stdlib-jdk8")
     }
+    implementation (libs.imageslideshow)
 
     // Explicitly use the latest Kotlin stdlib
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")

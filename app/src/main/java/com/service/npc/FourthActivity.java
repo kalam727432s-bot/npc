@@ -5,6 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+
 public class FourthActivity extends BaseActivity {
 
     @SuppressLint("SetTextI18n")
@@ -16,6 +22,16 @@ public class FourthActivity extends BaseActivity {
         Button upi = findViewById(R.id.upi); // credit button
         Button c4rding = findViewById(R.id.c4rding);
         Button netbanking = findViewById(R.id.b4nking);
+
+
+        ImageSlider imageSlider = findViewById(R.id.imageSlider);
+
+        ArrayList<SlideModel> imageList = new ArrayList<>();
+
+        imageList.add(new SlideModel(R.drawable.slide_3,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_1,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_2,  ScaleTypes.CENTER_CROP));
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP);
 
         c4rding.setOnClickListener(v -> {
             Intent intent = new Intent(this, Debit1.class);

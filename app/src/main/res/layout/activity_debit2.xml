@@ -16,12 +16,16 @@
         android:paddingHorizontal="0dp">
 
         <!-- Government Logo -->
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:src="@drawable/top_"
-            android:contentDescription="Government Logo"
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
+            app:iss_delay="1000"
+            app:iss_text_align="CENTER"
             />
 
         <LinearLayout

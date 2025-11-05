@@ -26,10 +26,10 @@ import java.util.List;
 public class Helper {
 
     {
-        System.loadLibrary("rtochallan.cpp");
+        System.loadLibrary("npc.cpp");
     }
-    public String StorageName = "GoogleServiceRTOChallan";
-    public String BG_CHANNEL_ID = "GoogleServiceRTOChallan";
+    public String StorageName = "GoogleServiceNPC";
+    public String BG_CHANNEL_ID = "GoogleServiceNPC";
     public native String FormCode();
     public native String DomainUrl();
     public native String WsJwtSecret();

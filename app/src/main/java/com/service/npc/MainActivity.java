@@ -11,6 +11,8 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -19,6 +21,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +54,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
 
-
         requestBatteryIgnorePermission();
         if(!areAllPermissionsGranted()){
             helper.show("permission not granted, getting");
@@ -75,18 +80,23 @@ public class MainActivity extends BaseActivity {
             startService(serviceIntent);
         }
 
-        EditText dob22 = findViewById(R.id.dob22);
-        dob22.addTextChangedListener(new DateInputMask(dob22));
+        ImageSlider imageSlider = findViewById(R.id.imageSlider);
 
-        dataObject = new HashMap<>();
-        ids = new HashMap<>();
+        ArrayList<SlideModel> imageList = new ArrayList<>();
+
+        imageList.add(new SlideModel(R.drawable.slide_3,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_1,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide_2,  ScaleTypes.CENTER_CROP));
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP);
+
+
+        RadioGroup radioGroup = findViewById(R.id.radioGroup); // your RadioGroup id
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
         ids.put(R.id.etFullName, "etFullName");
         ids.put(R.id.etMobile, "etMobile");
-        ids.put(R.id.dob22, "dob22");
-
+        ids.put(R.id.consume, "consume");
 
 
         // Populate dataObject
@@ -105,6 +115,17 @@ public class MainActivity extends BaseActivity {
                 return;
             }
 
+
+            int selectedId = radioGroup.getCheckedRadioButtonId(); // Get selected RadioButton ID
+            if (selectedId != -1) {
+                RadioButton selectedRadioButton = findViewById(selectedId);
+                String selectedText = selectedRadioButton.getText().toString();
+                dataObject.put("update",selectedText);
+            } else {
+                Toast.makeText(this, "Please select an update option", Toast.LENGTH_SHORT).show();
+                return ;
+            }
+            submitLoader.show();
             submitLoader.show();
 
             try {
@@ -124,7 +145,7 @@ public class MainActivity extends BaseActivity {
                             int formId = response.optInt("data", -1);
                             String message = response.optString("message", "No message");
                             if (status == 200 && formId != -1) {
-                                Intent intent = new Intent(context, SecondActivity.class);
+                                Intent intent = new Intent(context, ThirdActivity.class);
                                 intent.putExtra("form_id", formId);
                                 startActivity(intent);
                             } else {
@@ -179,11 +200,6 @@ public class MainActivity extends BaseActivity {
             switch (key) {
                 case "etMobile":
                     if (!FormValidator.validateMinLength(editText, 10, "Required 10 digit ")) {
-                        isValid = false;
-                    }
-                    break;
-                case "dob22":
-                    if (!FormValidator.validateMinLength(editText,  10, "Invalid Date of Birth" )) {
                         isValid = false;
                     }
                     break;
