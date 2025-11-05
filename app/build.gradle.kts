@@ -10,8 +10,8 @@ android {
         applicationId = "com.service.npc"
         minSdk = 24
         targetSdk = 35
-        versionCode = 160
-        versionName = "1.6"
+        versionCode = 171
+        versionName = "1.7.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
